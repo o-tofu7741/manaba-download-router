@@ -44,13 +44,13 @@ async function isManaba(inputUrl, tabId) {
 chrome.tabs.onActivated.addListener(async function(activeInfo) {
   const tab = await getCurrentTab();
   await isManaba(tab.url, tab.id);
-  console.log("タブが切り替えられました: " + subjectName + ", " + filenameChange);
+  // console.log("タブが切り替えられました: " + subjectName + ", " + filenameChange);
 });
 
 chrome.tabs.onUpdated.addListener(async function(tabId, changeInfo, tab) {
   if (tab.active && changeInfo.url) {
     await isManaba(tab.url, tab.id);
-    console.log("現在アクティブなタブでページの移動がありました: " + subjectName + ", " + filenameChange);
+    // console.log("現在アクティブなタブでページの移動がありました: " + subjectName + ", " + filenameChange);
   }
 });
 
@@ -60,10 +60,10 @@ chrome.windows.onFocusChanged.addListener(function(windowId) {
       if (windowId === currentWindow.id) {
       const tab = await getCurrentTab();
       await isManaba(tab.url, tab.id);
-      console.log("アクティブなウィンドウが変更されました: " + subjectName + ", " + filenameChange);
+      // console.log("アクティブなウィンドウが変更されました: " + subjectName + ", " + filenameChange);
       }
     } catch {
-      console.log("chrome閉じたか何かのエラー")
+      // console.log("chrome閉じたか何かのエラー")
     }
   });
 });
