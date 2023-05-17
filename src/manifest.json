@@ -1,6 +1,13 @@
 {
   "name": "Manaba Download Router",
   "version": "1.0",
+  "icons": {
+    "16": "img/icon16.png",
+    "32": "img/icon32.png",
+    "48": "img/icon48.png",
+    "128": "img/icon128.png"
+  },
+  "description": "manabaからファイルをダウンロードする時に自動で分類する拡張機能。",
   "manifest_version": 3,
   "permissions": [
     "downloads",
